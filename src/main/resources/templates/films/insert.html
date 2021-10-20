@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SALA DE FILMES</title>
+    <link rel="stylesheet" th:href="@{/css/root.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/films/list">Lista de filmes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form
+        action="#"
+        th:action="@{/films/insert}"
+        method="post"
+        th:object="${film}"
+      >
+        <label for="txtCRT">CRT</label>
+        <input type="text" th:field="*{CRT}" required />
+        <label for="txtTitle">Título</label>
+        <input type="text" th:field="*{title}" required />
+        <label for="txtAuthor">Diretor</label>
+        <input type ="text" th:field="*{diretor}" required />
+        <label for="txtPublishingCompany">Estudio</label>
+        <input type="text" th:field="*{publishingCompany}" required />
+        <button type="submit">Salvar</button>
+      </form>
+    </main>
+  </body>
+</html>

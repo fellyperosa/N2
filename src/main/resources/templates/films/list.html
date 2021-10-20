@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SALA DE FILMES</title>
+    <link rel="stylesheet" th:href="@{/css/root.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel="stylesheet" th:href="@{/css/table.css}" />
+      <link rel="stylesheet" th:href="@{/css/form.css}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/films/forminsert">Cadastrar novo Filme</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="box">
+      <table>
+        <thead>
+          <th scope="col">ID</th>
+          <th scope="col">CRT</th>
+          <th scope="col">Título</th>
+          <th scope="col">Diretor</th>
+          <th scope="col">Estudio</th>
+        </thead>
+        <tbody>
+          <tr th:each="film : ${films}">
+            <td th:text="${film.id}"></td>
+            <td th:text="${film.CRT}"></td>
+            <td th:text="${film.title}"></td>
+            <td th:text="${film.diretor}"></td>
+            <td th:text="${film.publishingCompany}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
